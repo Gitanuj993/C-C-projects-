@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) // main() is enough if your compiler support it
     cout << " reversed array is [ "  ;
     for ( int i = size -1; i>= 0  ;  i-- )
     { cout<< arr[i] << " " ; }
-    cout <<"]\n\n" ;
+    cout <<"]\n" ;
     
     // We can also copy reversed array in another array - with index
     int new_arr[size] ;
@@ -55,13 +55,26 @@ int main(int argc, char *argv[]) // main() is enough if your compiler support it
     index++; 
     }
     
-    
-    
+    // We can also reverse the array without using any third varible say index in above illustration
+    // we can also reverse the array without using index
+    int new_arr_without_index[size] ; //new array of size same of previous array   
+    for (int i = size -1 ; i>= 0 ; i--)
+    {
+         new_arr_without_index[ size - i -1] = arr[i] ;     
+    }
+                
     // lets traverse the array by for-loop 
     cout << "\n new array with index [" ;
     for ( int i = 0 ;  i < size ; i++)
     { cout << "" << new_arr[i]<< " " ; }
     cout <<"]\n" ;
+    
+   cout << " new array without index : [ " ;
+	for ( int x :    new_arr_without_index)
+	{ cout << x << " " ; }
+	cout << "] \n\n" ;
+	
+    
     
 	return 0 ;	
 }
